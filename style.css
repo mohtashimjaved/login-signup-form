@@ -41,6 +41,7 @@ body {
     margin: 15px 0;
 }
 .modify_text {
+    margin: -10px 0 !important;
     display: none;
     color: red;
     
@@ -50,7 +51,7 @@ label {
 }
 
 
-form {
+.form {
     width: 100%;
     align-items: center;
 }

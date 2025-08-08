@@ -11,88 +11,87 @@
 <body>
     <div class="body_container" id="body_container">
         <div class="main_box login">
-            <form action="">
+            <div class="form">
                 <h1>Login</h1>
                 <div class="input_box">
                     <label for="email">Email</label>
-                        <input type="text" id="email" placeholder="Email"><i class="fa-solid fa-envelope"></i>
+                    <input type="text" id="email" placeholder="Email"><i class="fa-solid fa-envelope"></i>
+                </div>
+                <p class="modify_text" id="log_email_modify">This email is not registered</p>
+                <div class="input_box">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Password"><i class="fa-solid fa-lock"></i>
+                </div>
+                <p class="modify_text" id="log_pass_modify">Password is incorrect</p>
+                <div class="input_box">
+                    <div class="forgot_link">
+                        <a href="#">Forgot Paswword?</a>
                     </div>
-                    <p class="modify_text" id="log_email_modify">This email is not registered</p>
-                    <div class="input_box">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Password"><i class="fa-solid fa-lock"></i>
-                    </div>
-                    <p class="modify_text" id="log_pass_modify">Password is incorrect</p>
-                    <div class="input_box">
-                        <div class="forgot_link">
-                            <a href="#">Forgot Paswword?</a>
-                        </div>
-                        <button type="submit" id="login_btn" class="btn" onclick="login()">Login</button>
-                        <p class="social_text">
-                            or login with social platforms
-                        </p>
-                    </div>
-                    <div class="social_icons">
-                        <a class="icons"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a class="icons"><i class="fa-brands fa-google"></i></a>
-                        <a class="icons"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a class="icons"><i class="fa-brands fa-github"></i></a>
-                    </div>
-                </form>
-            </div>
-            <div class="main_box signup">
-                <h1>Registration</h1>
-                <form action="#">
-                        <div class="input_box">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" placeholder="Username"><i class="fa-solid fa-user"></i>
-                    </div>
-                    <p class="modify_text" id="reg_user_modify">Please enter a valid username </p>
-                    <div class="input_box">
-                        <label for="email">Email</label>
-                        <input type="text" id="email_r" placeholder="Email"><i class="fa-solid fa-envelope"></i>
-                    </div>
-                    <p class="modify_text" id="reg_email_modify">Please enter a valid email</p>
-                    <div class="input_box">
-                        <label for="password">Password</label>
-                        <input type="password" id="password_r" placeholder="Password"><i class="fa-solid fa-lock"></i>
-                    </div>
-                    <p class="modify_text" id="reg_pass_modify">Please enter a valid password</p>
-                    <div class="input_box">
-                        <label for="confirm_password">Confirm Password</label>
-                        <input type="password" id="confirm_password" placeholder="Confirm Password"><i
-                            class="fa-solid fa-lock"></i>
-                        </div>
-                        <p class="modify_text" id="reg_conf_pass_modify">Password is not same</p>
-                    <div class="input_box">
-                        <!-- <label for="">Confirm Password</label> -->
-                        <button type="submit" id="register_btn" class="btn" onclick="register()">Register</button>
-                        <p class="social_text">
-                            or register with social platforms
-                        </p>
-                    </div>
-                </form>
+                    <button type="submit" id="login_btn" class="btn" onclick="login()">Login</button>
+                    <p class="social_text">
+                        or login with social platforms
+                    </p>
+                </div>
                 <div class="social_icons">
                     <a class="icons"><i class="fa-brands fa-facebook-f"></i></a>
                     <a class="icons"><i class="fa-brands fa-google"></i></a>
                     <a class="icons"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a class="icons"><i class="fa-brands fa-github"></i></a>
                 </div>
-        </form>
-    </div>
-    <div class="box">
-        <div class="animation_box right">
-            <h1>Welcome Back!</h1>
-            <p>Already have an account?</p>
-            <button class="btn login_btn" onclick="removeclass()">Login</button>
+            </div>
+        </div>
+        <div class="main_box signup">
+            <h1>Registration</h1>
+            <div class="form">
+                <div class="input_box">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Username"><i class="fa-solid fa-user"></i>
+                </div>
+                <p class="modify_text" id="reg_user_modify">Please enter a valid username </p>
+                <div class="input_box">
+                    <label for="email">Email</label>
+                    <input type="text" id="email_r" placeholder="Email"><i class="fa-solid fa-envelope"></i>
+                </div>
+                <p class="modify_text" id="reg_email_modify">Please enter a valid email</p>
+                <div class="input_box">
+                    <label for="password">Password</label>
+                    <input type="password" id="password_r" placeholder="Password"><i class="fa-solid fa-lock"></i>
+                </div>
+                <p class="modify_text" id="reg_pass_modify">Please enter a valid password</p>
+                <div class="input_box">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" placeholder="Confirm Password"><i
+                        class="fa-solid fa-lock"></i>
+                </div>
+                <p class="modify_text" id="reg_conf_pass_modify">Password is not same</p>
+                <div class="input_box">
+                    <!-- <label for="">Confirm Password</label> -->
+                    <button type="submit" id="register_btn" class="btn" onclick="register()">Register</button>
+                    <p class="social_text">
+                        or register with social platforms
+                    </p>
+                </div>
+            </div>
+            <div class="social_icons">
+                <a class="icons"><i class="fa-brands fa-facebook-f"></i></a>
+                <a class="icons"><i class="fa-brands fa-google"></i></a>
+                <a class="icons"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a class="icons"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="animation_box right">
+                <h1>Welcome Back!</h1>
+                <p>Already have an account?</p>
+                <button class="btn login_btn" onclick="removeclass()">Login</button>
 
+            </div>
+            <div class="animation_box left">
+                <h1>Hello, Welcome!</h1>
+                <p>Don't have an account?</p>
+                <button class="btn register_btn" onclick="addclass()">Register</button>
+            </div>
         </div>
-        <div class="animation_box left">
-            <h1>Hello, Welcome!</h1>
-            <p>Don't have an account?</p>
-            <button class="btn register_btn" onclick="addclass()">Register</button>
-        </div>
-    </div>
     </div>
     <script src="https://kit.fontawesome.com/a7577e03bc.js" crossorigin="anonymous"></script>
     <script src="./app.js"></script>

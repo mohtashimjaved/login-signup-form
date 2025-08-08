@@ -32,6 +32,7 @@ function register() {
         password_r.value = ""
         password_r.focus()
         value_check = false;
+        document.getElementById("reg_user_modify").style.display = "none"
         document.getElementById("reg_email_modify").style.display = "none"
     }
     else if (confirm_pass_r.value !== password_r.value) {
@@ -39,6 +40,8 @@ function register() {
         confirm_pass_r.value = ""
         confirm_pass_r.focus()
         value_check = false;
+        document.getElementById("reg_user_modify").style.display = "none"
+        document.getElementById("reg_email_modify").style.display = "none"
         document.getElementById("reg_pass_modify").style.display = "none"
     }
     else {
@@ -49,10 +52,6 @@ function register() {
             if (users[i].email === email_r.value) {
                 alert("User is already registered");
                 emptyInputValues(username_r, email_r, password_r, confirm_pass_r);
-                document.getElementById("reg_user_modify").style.display = "none"
-                document.getElementById("reg_email_modify").style.display = "none"
-                document.getElementById("reg_pass_modify").style.display = "none"
-                document.getElementById("reg_conf_pass_modify").style.display = "none"
                 return;
             }
         }
@@ -65,6 +64,10 @@ function register() {
         users.push(user_obj);
         localStorage.setItem("users", JSON.stringify(users))
         emptyInputValues(username_r, email_r, password_r, confirm_pass_r);
+        document.getElementById("reg_user_modify").style.display = "none"
+        document.getElementById("reg_email_modify").style.display = "none"
+        document.getElementById("reg_pass_modify").style.display = "none"
+        document.getElementById("reg_conf_pass_modify").style.display = "none"
 
     }
     // else {
@@ -112,7 +115,9 @@ function login() {
 const container =  document.getElementById("body_container")
 function addclass(){
     container.classList.add("active")
+    document.getElementsByTagName("input").value = ""
 }
 function removeclass(){
+    document.getElementsByTagName("input").value = ""
     container.classList.remove("active")
 }
