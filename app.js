@@ -85,7 +85,7 @@ function login() {
     let users = JSON.parse(localStorage.getItem("users"));
     const email = document.getElementById("email");
     const password = document.getElementById("password");
-    for (let i = 0; i < users.length; i++){
+    for (let i = 0; i < users; i++){
         if(users[i].email === email.value && users[i].password === password.value){
             login_value = true
             alert("User Logged in")
@@ -99,6 +99,7 @@ function login() {
             password.focus();
             document.getElementById("log_email_modify").style.display = "none"
         }
+    
     }
     if(!login_value){
         document.getElementById("log_email_modify").style.display = "block"
