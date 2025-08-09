@@ -10,7 +10,6 @@ function register() {
     const validPass = passwordRegex.test(password_r.value)
     let users = JSON.parse(localStorage.getItem("users"));
     console.log(users);
-
     if (!users) {
         users = []
     }
@@ -73,6 +72,7 @@ function register() {
     // else {
     //     alert("Enter values correctly")
     // }
+
 }
 function emptyInputValues(name, email, password, confirmPassword) {
     for (let i = 0; i < arguments.length; i++) {
@@ -85,40 +85,46 @@ function login() {
     let users = JSON.parse(localStorage.getItem("users"));
     const email = document.getElementById("email");
     const password = document.getElementById("password");
-    for (let i = 0; i < users; i++){
-        if(users[i].email === email.value && users[i].password === password.value){
-            login_value = true
-            alert("User Logged in")
-            window.location.reload()
+    if (users) {
+        for (let i = 0; i < users.length; i++) {
+
+            if (users[i].email === email.value && users[i].password === password.value) {
+                login_value = true
+                alert("User Logged in")
+                window.location.reload()
+            }
+            else if (users[i].email === email.value && users[i].password !== password.value) {
+                document.getElementById("log_pass_modify").style.display = "block";
+
+                login_value = true;
+                // password.value = ""
+                emptyInputValues(password);
+                password.focus();
+                document.getElementById("log_email_modify").style.display = "none"
+            }
         }
-        else if(users[i].email === email.value && users[i].password !== password.value){
-            document.getElementById("log_pass_modify").style.display = "block";
-            login_value = true;
-            // password.value = ""
-            emptyInputValues(password);
-            password.focus();
-            document.getElementById("log_email_modify").style.display = "none"
-        }
-    
     }
-    if(!login_value){
+    else {
+        login_value = false;
+    }
+    if (!login_value) {
         document.getElementById("log_email_modify").style.display = "block"
         email.focus();
         emptyInputValues(email, password);
         // alert("this user is not registered")
     }
-    else if(login_value){
+    else if (login_value) {
         // document.getElementById("log_pass_modify").style.display = "none";
         document.getElementById("log_email_modify").style.display = "none"
     }
 
 }
-const container =  document.getElementById("body_container")
-function addclass(){
+const container = document.getElementById("body_container")
+function addclass() {
     container.classList.add("active")
     // document.getElementsByTagName("input").value = ""
 }
-function removeclass(){
+function removeclass() {
     // document.getElementsByTagName("input").value = ""
     container.classList.remove("active")
 }

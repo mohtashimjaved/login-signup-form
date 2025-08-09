@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,12 +18,12 @@
                     <label for="email">Email</label>
                     <input type="text" id="email" placeholder="Email"><i class="fa-solid fa-envelope"></i>
                 </div>
-                <p class="modify_text" id="log_email_modify">This email is not registered</p>
+                <p class="modify_text animate__animated" id="log_email_modify">This email is not registered</p>
                 <div class="input_box">
                     <label for="password">Password</label>
                     <input type="password" id="password" placeholder="Password"><i class="fa-solid fa-lock"></i>
                 </div>
-                <p class="modify_text" id="log_pass_modify">Password is incorrect</p>
+                <p class="modify_text animate__animated" id="log_pass_modify">Password is incorrect</p>
                 <div class="input_box">
                     <div class="forgot_link">
                         <a href="#">Forgot Paswword?</a>
@@ -47,23 +48,23 @@
                     <label for="username">Username</label>
                     <input type="text" id="username" placeholder="Username"><i class="fa-solid fa-user"></i>
                 </div>
-                <p class="modify_text" id="reg_user_modify">Please enter a valid username </p>
+                <p class="modify_text animate__animated" id="reg_user_modify">Please enter a valid username </p>
                 <div class="input_box">
                     <label for="email">Email</label>
                     <input type="text" id="email_r" placeholder="Email"><i class="fa-solid fa-envelope"></i>
                 </div>
-                <p class="modify_text" id="reg_email_modify">Please enter a valid email</p>
+                <p class="modify_text animate__animated" id="reg_email_modify">Please enter a valid email</p>
                 <div class="input_box">
                     <label for="password">Password</label>
                     <input type="password" id="password_r" placeholder="Password"><i class="fa-solid fa-lock"></i>
                 </div>
-                <p class="modify_text" id="reg_pass_modify">Please enter a valid password</p>
+                <p class="modify_text animate__animated" id="reg_pass_modify">Please enter a valid password</p>
                 <div class="input_box">
                     <label for="confirm_password">Confirm Password</label>
                     <input type="password" id="confirm_password" placeholder="Confirm Password"><i
                         class="fa-solid fa-lock"></i>
                 </div>
-                <p class="modify_text" id="reg_conf_pass_modify">Password is not same</p>
+                <p class="modify_text animate__animated" id="reg_conf_pass_modify">Password is not same</p>
                 <div class="input_box">
                     <!-- <label for="">Confirm Password</label> -->
                     <button type="submit" id="register_btn" class="btn" onclick="register()">Register</button>
