@@ -49,7 +49,6 @@ function register() {
     if (value_check) {
         for (let i = 0; i < users.length; i++) {
             if (users[i].email === email_r.value) {
-                // alert("User is already registered");
                 Swal.fire({
                     title: "registered",
                     text: "User is already registered",
@@ -61,7 +60,6 @@ function register() {
                 return;
             }
         }
-        // document.getElementsByClassName("modify_text").style.display = "none"
         const user_obj = {
             name: username_r.value,
             email: email_r.value,
@@ -76,19 +74,13 @@ function register() {
             showConfirmButton: false,
             timer: 2000
         });
-        
         emptyInputValues(username_r, email_r, password_r, confirm_pass_r);
         document.getElementById("reg_user_modify").style.display = "none"
         document.getElementById("reg_email_modify").style.display = "none"
         document.getElementById("reg_pass_modify").style.display = "none"
         document.getElementById("reg_conf_pass_modify").style.display = "none"
         container.classList.remove("active")
-
     }
-    // else {
-    //     alert("Enter values correctly")
-    // }
-
 }
 function emptyInputValues(name, email, password, confirmPassword) {
     for (let i = 0; i < arguments.length; i++) {
@@ -121,9 +113,7 @@ function login() {
             }
             else if (users[i].email === email.value && users[i].password !== password.value) {
                 document.getElementById("log_pass_modify").style.display = "block";
-
                 login_value = true;
-                // password.value = ""
                 emptyInputValues(password);
                 password.focus();
                 document.getElementById("log_email_modify").style.display = "none"
@@ -137,10 +127,8 @@ function login() {
         document.getElementById("log_email_modify").style.display = "block"
         email.focus();
         emptyInputValues(email, password);
-        // alert("this user is not registered")
     }
     else if (login_value) {
-        // document.getElementById("log_pass_modify").style.display = "none";
         document.getElementById("log_email_modify").style.display = "none"
     }
 
@@ -148,9 +136,7 @@ function login() {
 const container = document.getElementById("body_container")
 function addclass() {
     container.classList.add("active")
-    // document.getElementsByTagName("input").value = ""
 }
 function removeclass() {
-    // document.getElementsByTagName("input").value = ""
     container.classList.remove("active")
 }
