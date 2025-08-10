@@ -49,7 +49,14 @@ function register() {
     if (value_check) {
         for (let i = 0; i < users.length; i++) {
             if (users[i].email === email_r.value) {
-                alert("User is already registered");
+                // alert("User is already registered");
+                Swal.fire({
+                    title: "registered",
+                    text: "User is already registered",
+                    icon: "error",
+                    showConfirmButton: false,
+                    timer: 2000
+                });
                 emptyInputValues(username_r, email_r, password_r, confirm_pass_r);
                 return;
             }
@@ -62,11 +69,20 @@ function register() {
         }
         users.push(user_obj);
         localStorage.setItem("users", JSON.stringify(users))
+        Swal.fire({
+            title: "Registered",
+            text: "User registered successfully",
+            icon: "success",
+            showConfirmButton: false,
+            timer: 2000
+        });
+        
         emptyInputValues(username_r, email_r, password_r, confirm_pass_r);
         document.getElementById("reg_user_modify").style.display = "none"
         document.getElementById("reg_email_modify").style.display = "none"
         document.getElementById("reg_pass_modify").style.display = "none"
         document.getElementById("reg_conf_pass_modify").style.display = "none"
+        container.classList.remove("active")
 
     }
     // else {
@@ -90,8 +106,18 @@ function login() {
 
             if (users[i].email === email.value && users[i].password === password.value) {
                 login_value = true
-                alert("User Logged in")
-                window.location.reload()
+
+                Swal.fire({
+                    title: "Logged in",
+                    text: "User logged in successfully",
+                    icon: "success",
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+                setTimeout(
+                    () => { window.location.reload() }, 2200
+                )
+
             }
             else if (users[i].email === email.value && users[i].password !== password.value) {
                 document.getElementById("log_pass_modify").style.display = "block";
